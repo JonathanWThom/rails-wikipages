@@ -6,4 +6,9 @@
   <% end %>
 </ul>
 
+<h3>Local Businesses</h3>
+<% @localBusinesses.each do |business| %>
+  <%= business.name %>
+<% end %>
+
 <%= link_to "Add Business Type", new_type_path %>

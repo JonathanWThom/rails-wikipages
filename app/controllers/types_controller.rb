@@ -1,6 +1,7 @@
 class TypesController < ApplicationController
   def index
     @types = Type.all
+    @localBusinesses = Business.isLocal
     render :index
   end
 
