@@ -7,3 +7,8 @@
 <% else %>
   <p>There aren't any businesses in this city yet!</p>
 <% end %>
+
+<p><%= link_to "Edit", edit_city_path(@city) %></p>
+<p><%= link_to "Delete", city_path(@city),
+                         :data => {:confirm => "You sure?",
+                                   :method => "delete"} %></p>
