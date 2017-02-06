@@ -8,6 +8,7 @@
       <li>
         <%= business.name %> |
         <%= link_to "Edit", edit_type_business_path(@type, business) %> |
+        <!-- <%= link_to "View", type_business_path(@type, business) %> | -->
         <%= link_to "Delete", type_business_path(@type, business),
                                  :data => {:confirm => "Are you sure?",
                                                 :method => "delete"} %>

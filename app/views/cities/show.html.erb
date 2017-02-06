@@ -2,7 +2,7 @@
 
 <% if @city.businesses.any? %>
   <% @city.businesses.each do |business| %>
-    <li><%= business.name %></li> <!--add link eventually -->
+    <li><%= link_to business.id, type_business_path(business.type, business) %></li> <!--add link eventually -->
   <% end %>
 <% else %>
   <p>There aren't any businesses in this city yet!</p>

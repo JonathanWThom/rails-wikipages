@@ -1,4 +1,9 @@
 class BusinessesController < ApplicationController
+  def show
+    @business = Business.find(params[:id])
+    render :show
+  end
+
   def new
     @type = Type.find(params[:type_id])
     @cities = City.all
