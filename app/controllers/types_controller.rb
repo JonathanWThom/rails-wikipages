@@ -23,6 +23,29 @@ class TypesController < ApplicationController
     end
   end
 
+  def edit
+    @type = Type.find(params[:id])
+    render :edit
+  end
+
+  def update
+    @type = Type.find(params[:id])
+    if @type.update(type_params)
+      redirect_to types_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @type = Type.find(params[:id])
+    @type.businesses.each do |business|
+      business.destroy
+    end
+    @type.destroy
+    redirect_to types_path
+  end
+
 private
   def type_params
     params.require(:type).permit(:name)
