@@ -1,8 +1,8 @@
 <h1><%= @city.name %></h1>
 
 <% if @city.businesses.any? %>
-  <% @city.business.each do |business| %>
-    <li><% business.name %></li> <!--add link eventually -->
+  <% @city.businesses.each do |business| %>
+    <li><%= business.name %></li> <!--add link eventually -->
   <% end %>
 <% else %>
   <p>There aren't any businesses in this city yet!</p>
